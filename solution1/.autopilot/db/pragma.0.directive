@@ -1,0 +1,66 @@
+<AutoPilot:ProjectResources xmlns:AutoPilot="com.autoesl.autopilot.ui.directiveView">
+<sourceFile name="">
+<directive functionLabel="" functionName="AXIvideo2Mat_DMA" label="">
+<pragma name="LOOP_TRIPCOUNT">
+<option name="max" value="ROWS"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="AXIvideo2Mat_DMA" label="">
+<pragma name="LOOP_TRIPCOUNT">
+<option name="max" value="COLS"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="AXIvideo2Mat_DMA" label="">
+<pragma name="LOOP_FLATTEN">
+<option name="off" positionalBoolean="1" value=""/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="AXIvideo2Mat_DMA" label="">
+<pragma name="PIPELINE">
+<option name="II" value="1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="Mat2AXIvideo_DMA" label="">
+<pragma name="LOOP_TRIPCOUNT">
+<option name="max" value="ROWS"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="Mat2AXIvideo_DMA" label="">
+<pragma name="LOOP_TRIPCOUNT">
+<option name="max" value="COLS"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="Mat2AXIvideo_DMA" label="">
+<pragma name="LOOP_FLATTEN">
+<option name="off" positionalBoolean="1" value=""/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="Mat2AXIvideo_DMA" label="">
+<pragma name="PIPELINE">
+<option name="II" value="1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="newsob" label="">
+<pragma name="INTERFACE">
+<option name="axis" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="INPUT_STREAM"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="newsob" label="">
+<pragma name="INTERFACE">
+<option name="axis" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="OUTPUT_STREAM"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="newsob" label="">
+<pragma name="RESOURCE">
+<option name="variable" positionalBoolean="4" value="return"/>
+<option name="core" value="AXI_SLAVE"/>
+<option name="metadata" value="&quot;-bus_bundle CONTROL_BUS&quot;"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="newsob" label="">
+<pragma name="DATAFLOW"/>
+</directive>
+</sourceFile>
+</AutoPilot:ProjectResources>

@@ -1,0 +1,14 @@
+newsob_mux_3to1_sel2_8_1
+newsob_Filter2D_k_buf_0_val_3
+FIFO_newsob_img_0_rows_V_channel
+FIFO_newsob_img_0_cols_V_channel
+FIFO_newsob_img_0_data_stream_0_V
+FIFO_newsob_img_0_rows_V_channel5
+FIFO_newsob_img_0_cols_V_channel6
+FIFO_newsob_img_1_data_stream_0_V
+newsob_Block_proc
+newsob_AXIvideo2Mat_DMA
+newsob_Filter2D
+newsob_Sobel
+newsob_Mat2AXIvideo_DMA
+newsob

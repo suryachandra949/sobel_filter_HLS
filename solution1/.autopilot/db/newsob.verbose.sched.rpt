@@ -1,0 +1,258 @@
+
+
+================================================================
+== Vivado HLS Report for 'newsob'
+================================================================
+* Date:           Fri Jun 29 21:45:07 2018
+
+* Version:        2015.4 (Build 1412921 on Wed Nov 18 09:58:55 AM 2015)
+* Project:        sobelfilter
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |   5.00|      4.36|        0.63|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +---------+---------+---------+---------+----------+
+    |      Latency      |      Interval     | Pipeline |
+    |   min   |   max   |   min   |   max   |   Type   |
+    +---------+---------+---------+---------+----------+
+    |  1051663|  1067058|  1051650|  1067057| dataflow |
+    +---------+---------+---------+---------+----------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states: 7
+* Pipeline: 0
+* Dataflow Pipeline: 1
+  DF-Pipeline-0: Size = 7, States = { 1 2 3 4 5 6 7 }
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / true
+3 --> 
+	4  / true
+4 --> 
+	5  / true
+5 --> 
+	6  / true
+6 --> 
+	7  / true
+7 --> 
+* FSM state operations: 
+
+ <State 1>: 0.00ns
+ST_1: img_0_cols_V_channel6 [1/1] 0.00ns
+codeRepl:0  %img_0_cols_V_channel6 = alloca i12, align 2
+
+ST_1: img_0_rows_V_channel5 [1/1] 0.00ns
+codeRepl:1  %img_0_rows_V_channel5 = alloca i12, align 2
+
+ST_1: img_0_cols_V_channel [1/1] 0.00ns
+codeRepl:2  %img_0_cols_V_channel = alloca i12, align 2
+
+ST_1: img_0_rows_V_channel [1/1] 0.00ns
+codeRepl:3  %img_0_rows_V_channel = alloca i12, align 2
+
+ST_1: img_0_data_stream_0_V [1/1] 0.00ns
+codeRepl:20  %img_0_data_stream_0_V = alloca i8, align 1
+
+ST_1: img_1_data_stream_0_V [1/1] 0.00ns
+codeRepl:23  %img_1_data_stream_0_V = alloca i8, align 1
+
+ST_1: stg_14 [1/1] 0.00ns
+codeRepl:33  call fastcc void @newsob_Block__proc(i12* %img_0_rows_V_channel, i12* %img_0_cols_V_channel)
+
+
+ <State 2>: 0.00ns
+ST_2: stg_15 [2/2] 0.00ns
+codeRepl:38  call fastcc void @newsob_AXIvideo2Mat_DMA(i8* %INPUT_STREAM_V_data_V, i1* %INPUT_STREAM_V_keep_V, i1* %INPUT_STREAM_V_strb_V, i1* %INPUT_STREAM_V_user_V, i1* %INPUT_STREAM_V_last_V, i1* %INPUT_STREAM_V_id_V, i1* %INPUT_STREAM_V_dest_V, i12* nocapture %img_0_rows_V_channel, i12* nocapture %img_0_cols_V_channel, i8* %img_0_data_stream_0_V, i12* %img_0_rows_V_channel5, i12* %img_0_cols_V_channel6)
+
+
+ <State 3>: 0.00ns
+ST_3: stg_16 [1/2] 0.00ns
+codeRepl:38  call fastcc void @newsob_AXIvideo2Mat_DMA(i8* %INPUT_STREAM_V_data_V, i1* %INPUT_STREAM_V_keep_V, i1* %INPUT_STREAM_V_strb_V, i1* %INPUT_STREAM_V_user_V, i1* %INPUT_STREAM_V_last_V, i1* %INPUT_STREAM_V_id_V, i1* %INPUT_STREAM_V_dest_V, i12* nocapture %img_0_rows_V_channel, i12* nocapture %img_0_cols_V_channel, i8* %img_0_data_stream_0_V, i12* %img_0_rows_V_channel5, i12* %img_0_cols_V_channel6)
+
+
+ <State 4>: 0.00ns
+ST_4: stg_17 [2/2] 0.00ns
+codeRepl:39  call fastcc void @newsob_Sobel(i12* nocapture %img_0_rows_V_channel5, i12* nocapture %img_0_cols_V_channel6, i8* %img_0_data_stream_0_V, i8* %img_1_data_stream_0_V)
+
+
+ <State 5>: 0.00ns
+ST_5: stg_18 [1/2] 0.00ns
+codeRepl:39  call fastcc void @newsob_Sobel(i12* nocapture %img_0_rows_V_channel5, i12* nocapture %img_0_cols_V_channel6, i8* %img_0_data_stream_0_V, i8* %img_1_data_stream_0_V)
+
+
+ <State 6>: 0.00ns
+ST_6: stg_19 [2/2] 0.00ns
+codeRepl:40  call fastcc void @newsob_Mat2AXIvideo_DMA(i8* %img_1_data_stream_0_V, i8* %OUTPUT_STREAM_V_data_V, i1* %OUTPUT_STREAM_V_keep_V, i1* %OUTPUT_STREAM_V_strb_V, i1* %OUTPUT_STREAM_V_user_V, i1* %OUTPUT_STREAM_V_last_V, i1* %OUTPUT_STREAM_V_id_V, i1* %OUTPUT_STREAM_V_dest_V)
+
+
+ <State 7>: 1.00ns
+ST_7: stg_20 [1/1] 0.00ns
+codeRepl:4  call void (...)* @_ssdm_op_SpecDataflowPipeline(i32 -1, [1 x i8]* @p_str1806) nounwind
+
+ST_7: stg_21 [1/1] 0.00ns
+codeRepl:5  call void (...)* @_ssdm_op_SpecBitsMap(i8* %INPUT_STREAM_V_data_V), !map !7
+
+ST_7: stg_22 [1/1] 0.00ns
+codeRepl:6  call void (...)* @_ssdm_op_SpecBitsMap(i1* %INPUT_STREAM_V_keep_V), !map !11
+
+ST_7: stg_23 [1/1] 0.00ns
+codeRepl:7  call void (...)* @_ssdm_op_SpecBitsMap(i1* %INPUT_STREAM_V_strb_V), !map !15
+
+ST_7: stg_24 [1/1] 0.00ns
+codeRepl:8  call void (...)* @_ssdm_op_SpecBitsMap(i1* %INPUT_STREAM_V_user_V), !map !19
+
+ST_7: stg_25 [1/1] 0.00ns
+codeRepl:9  call void (...)* @_ssdm_op_SpecBitsMap(i1* %INPUT_STREAM_V_last_V), !map !23
+
+ST_7: stg_26 [1/1] 0.00ns
+codeRepl:10  call void (...)* @_ssdm_op_SpecBitsMap(i1* %INPUT_STREAM_V_id_V), !map !27
+
+ST_7: stg_27 [1/1] 0.00ns
+codeRepl:11  call void (...)* @_ssdm_op_SpecBitsMap(i1* %INPUT_STREAM_V_dest_V), !map !31
+
+ST_7: stg_28 [1/1] 0.00ns
+codeRepl:12  call void (...)* @_ssdm_op_SpecBitsMap(i8* %OUTPUT_STREAM_V_data_V), !map !35
+
+ST_7: stg_29 [1/1] 0.00ns
+codeRepl:13  call void (...)* @_ssdm_op_SpecBitsMap(i1* %OUTPUT_STREAM_V_keep_V), !map !39
+
+ST_7: stg_30 [1/1] 0.00ns
+codeRepl:14  call void (...)* @_ssdm_op_SpecBitsMap(i1* %OUTPUT_STREAM_V_strb_V), !map !43
+
+ST_7: stg_31 [1/1] 0.00ns
+codeRepl:15  call void (...)* @_ssdm_op_SpecBitsMap(i1* %OUTPUT_STREAM_V_user_V), !map !47
+
+ST_7: stg_32 [1/1] 0.00ns
+codeRepl:16  call void (...)* @_ssdm_op_SpecBitsMap(i1* %OUTPUT_STREAM_V_last_V), !map !51
+
+ST_7: stg_33 [1/1] 0.00ns
+codeRepl:17  call void (...)* @_ssdm_op_SpecBitsMap(i1* %OUTPUT_STREAM_V_id_V), !map !55
+
+ST_7: stg_34 [1/1] 0.00ns
+codeRepl:18  call void (...)* @_ssdm_op_SpecBitsMap(i1* %OUTPUT_STREAM_V_dest_V), !map !59
+
+ST_7: stg_35 [1/1] 0.00ns
+codeRepl:19  call void (...)* @_ssdm_op_SpecTopModule([7 x i8]* @newsob_str) nounwind
+
+ST_7: empty [1/1] 0.00ns
+codeRepl:21  %empty = call i32 (...)* @_ssdm_op_SpecChannel([23 x i8]* @img_0_OC_data_stream_LF_0_NF_s, i32 1, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 1, i32 1, i8* %img_0_data_stream_0_V, i8* %img_0_data_stream_0_V)
+
+ST_7: stg_37 [1/1] 0.00ns
+codeRepl:22  call void (...)* @_ssdm_op_SpecInterface(i8* %img_0_data_stream_0_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str)
+
+ST_7: empty_9 [1/1] 0.00ns
+codeRepl:24  %empty_9 = call i32 (...)* @_ssdm_op_SpecChannel([23 x i8]* @img_1_OC_data_stream_LF_0_NF_s, i32 1, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 1, i32 1, i8* %img_1_data_stream_0_V, i8* %img_1_data_stream_0_V)
+
+ST_7: stg_39 [1/1] 0.00ns
+codeRepl:25  call void (...)* @_ssdm_op_SpecInterface(i8* %img_1_data_stream_0_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str)
+
+ST_7: stg_40 [1/1] 0.00ns
+codeRepl:26  call void (...)* @_ssdm_op_SpecInterface(i8* %INPUT_STREAM_V_data_V, i1* %INPUT_STREAM_V_keep_V, i1* %INPUT_STREAM_V_strb_V, i1* %INPUT_STREAM_V_user_V, i1* %INPUT_STREAM_V_last_V, i1* %INPUT_STREAM_V_id_V, i1* %INPUT_STREAM_V_dest_V, [5 x i8]* @p_str1805, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1806, [1 x i8]* @p_str1806, [1 x i8]* @p_str1806, [1 x i8]* @p_str1806) nounwind
+
+ST_7: stg_41 [1/1] 0.00ns
+codeRepl:27  call void (...)* @_ssdm_op_SpecInterface(i8* %OUTPUT_STREAM_V_data_V, i1* %OUTPUT_STREAM_V_keep_V, i1* %OUTPUT_STREAM_V_strb_V, i1* %OUTPUT_STREAM_V_user_V, i1* %OUTPUT_STREAM_V_last_V, i1* %OUTPUT_STREAM_V_id_V, i1* %OUTPUT_STREAM_V_dest_V, [5 x i8]* @p_str1805, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1806, [1 x i8]* @p_str1806, [1 x i8]* @p_str1806, [1 x i8]* @p_str1806) nounwind
+
+ST_7: stg_42 [1/1] 0.00ns
+codeRepl:28  call void (...)* @_ssdm_op_SpecIFCore(i32 0, [1 x i8]* @p_str1806, [10 x i8]* @p_str1807, [1 x i8]* @p_str1806, i32 -1, [1 x i8]* @p_str1806, [1 x i8]* @p_str1806, [24 x i8]* @p_str1808)
+
+ST_7: empty_10 [1/1] 0.00ns
+codeRepl:29  %empty_10 = call i32 (...)* @_ssdm_op_SpecChannel([21 x i8]* @img_0_OC_rows_OC_V_channel_str, i32 1, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 1, i32 0, i12* %img_0_rows_V_channel, i12* %img_0_rows_V_channel)
+
+ST_7: stg_44 [1/1] 0.00ns
+codeRepl:30  call void (...)* @_ssdm_op_SpecInterface(i12* %img_0_rows_V_channel, [8 x i8]* @ap_fifo_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str)
+
+ST_7: empty_11 [1/1] 0.00ns
+codeRepl:31  %empty_11 = call i32 (...)* @_ssdm_op_SpecChannel([21 x i8]* @img_0_OC_cols_OC_V_channel_str, i32 1, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 1, i32 0, i12* %img_0_cols_V_channel, i12* %img_0_cols_V_channel)
+
+ST_7: stg_46 [1/1] 0.00ns
+codeRepl:32  call void (...)* @_ssdm_op_SpecInterface(i12* %img_0_cols_V_channel, [8 x i8]* @ap_fifo_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str)
+
+ST_7: empty_12 [1/1] 0.00ns
+codeRepl:34  %empty_12 = call i32 (...)* @_ssdm_op_SpecChannel([22 x i8]* @img_0_OC_rows_OC_V_channel5_st, i32 1, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 1, i32 0, i12* %img_0_rows_V_channel5, i12* %img_0_rows_V_channel5)
+
+ST_7: stg_48 [1/1] 0.00ns
+codeRepl:35  call void (...)* @_ssdm_op_SpecInterface(i12* %img_0_rows_V_channel5, [8 x i8]* @ap_fifo_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str)
+
+ST_7: empty_13 [1/1] 0.00ns
+codeRepl:36  %empty_13 = call i32 (...)* @_ssdm_op_SpecChannel([22 x i8]* @img_0_OC_cols_OC_V_channel6_st, i32 1, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 1, i32 0, i12* %img_0_cols_V_channel6, i12* %img_0_cols_V_channel6)
+
+ST_7: stg_50 [1/1] 0.00ns
+codeRepl:37  call void (...)* @_ssdm_op_SpecInterface(i12* %img_0_cols_V_channel6, [8 x i8]* @ap_fifo_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str)
+
+ST_7: stg_51 [1/2] 1.00ns
+codeRepl:40  call fastcc void @newsob_Mat2AXIvideo_DMA(i8* %img_1_data_stream_0_V, i8* %OUTPUT_STREAM_V_data_V, i1* %OUTPUT_STREAM_V_keep_V, i1* %OUTPUT_STREAM_V_strb_V, i1* %OUTPUT_STREAM_V_user_V, i1* %OUTPUT_STREAM_V_last_V, i1* %OUTPUT_STREAM_V_id_V, i1* %OUTPUT_STREAM_V_dest_V)
+
+ST_7: stg_52 [1/1] 0.00ns
+codeRepl:41  ret void
+
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog/>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog>
+        <logs message="@W [SYN-103] Legalizing function name 'newsob_Block__proc' to 'newsob_Block_proc'." projectName="sobelfilter" solutionName="solution1" date="2018-06-29T21:44:57.826+0530" type="Warning"/>
+        <logs message="@W [ANALYSIS-52] Setting false inter dependency for variable 'k_buf[0].val[5]' (C:/Xilinx/Vivado_HLS/2015.4/common/technology/autopilot/hls/hls_video_imgproc.h:378)." projectName="sobelfilter" solutionName="solution1" date="2018-06-29T21:44:57.295+0530" type="Warning"/>
+        <logs message="@W [ANALYSIS-52] Setting false inter dependency for variable 'k_buf[0].val[4]' (C:/Xilinx/Vivado_HLS/2015.4/common/technology/autopilot/hls/hls_video_imgproc.h:378)." projectName="sobelfilter" solutionName="solution1" date="2018-06-29T21:44:56.482+0530" type="Warning"/>
+        <logs message="@W [ANALYSIS-52] Setting false inter dependency for variable 'k_buf[0].val[3]' (C:/Xilinx/Vivado_HLS/2015.4/common/technology/autopilot/hls/hls_video_imgproc.h:378)." projectName="sobelfilter" solutionName="solution1" date="2018-06-29T21:44:56.466+0530" type="Warning"/>
+        <logs message="@W [XFORM-631] Renaming function 'hls::AXIvideo2Mat_DMA&lt;8, 1024, 1024, 0>' (sobelfilter/Mat2AXIvideo_DMA1.h:22:50) into AXIvideo2Mat_DMA." projectName="sobelfilter" solutionName="solution1" date="2018-06-29T21:44:56.435+0530" type="Warning"/>
+        <logs message="@W [XFORM-631] Renaming function 'hls::Filter2D&lt;hls::BORDER_DEFAULT, 0, 0, ap_int&lt;8>, int, 1024, 1024, 3, 3>' (C:/Xilinx/Vivado_HLS/2015.4/common/technology/autopilot/hls/hls_video_imgproc.h:118:33) into Filter2D." projectName="sobelfilter" solutionName="solution1" date="2018-06-29T21:44:55.998+0530" type="Warning"/>
+        <logs message="@W [XFORM-631] Renaming function 'hls::Mat2AXIvideo_DMA&lt;8, 1024, 1024, 0>' (sobelfilter/Mat2AXIvideo_DMA1.h:52:47) into Mat2AXIvideo_DMA." projectName="sobelfilter" solutionName="solution1" date="2018-06-29T21:44:55.951+0530" type="Warning"/>
+        <logs message="@W [XFORM-631] Renaming function 'hls::Sobel&lt;1, 0, 3, 0, 0, 1024, 1024, 1024, 1024>' (C:/Xilinx/Vivado_HLS/2015.4/common/technology/autopilot/hls/hls_video_imgproc.h:2058:5) into Sobel." projectName="sobelfilter" solutionName="solution1" date="2018-06-29T21:44:55.935+0530" type="Warning"/>
+        <logs message="@W [XFORM-732] An internal stream 'img_1.data_stream[0].V' (sobelfilter/newsob1.cc:13) with default size is used in a non-dataflow region, which may result in deadlock. Please consider to resize the stream using the directive 'set_directive_stream'." projectName="sobelfilter" solutionName="solution1" date="2018-06-29T21:44:53.498+0530" type="Warning"/>
+        <logs message="@W [XFORM-732] An internal stream 'img_0.data_stream[0].V' (sobelfilter/newsob1.cc:12) with default size is used in a non-dataflow region, which may result in deadlock. Please consider to resize the stream using the directive 'set_directive_stream'." projectName="sobelfilter" solutionName="solution1" date="2018-06-29T21:44:53.420+0530" type="Warning"/>
+        <logs message="@W [XFORM-561] Updating loop lower bound from 0 to 1024 for loop 'loop_height' (sobelfilter/Mat2AXIvideo_DMA1.h:53:1) in function 'hls::Mat2AXIvideo_DMA&lt;8, 1024, 1024, 0>'." projectName="sobelfilter" solutionName="solution1" date="2018-06-29T21:44:53.404+0530" type="Warning"/>
+        <logs message="@W [XFORM-561] Updating loop lower bound from 0 to 1024 for loop 'loop_width' (sobelfilter/Mat2AXIvideo_DMA1.h:55:1) in function 'hls::Mat2AXIvideo_DMA&lt;8, 1024, 1024, 0>'." projectName="sobelfilter" solutionName="solution1" date="2018-06-29T21:44:53.295+0530" type="Warning"/>
+        <logs message="@W [XFORM-1103] Ignored data pack directive on non-struct variable 'img_0.data_stream.V' (sobelfilter/newsob1.cc:12)." projectName="sobelfilter" solutionName="solution1" date="2018-06-29T21:44:52.795+0530" type="Warning"/>
+        <logs message="@W [HLS-40] Skipped source file 'zebra.jpg'. Source files must have extensions .c, .C, .cc, .cpp, .c++, .cp, or .cxx." projectName="sobelfilter" solutionName="solution1" date="2018-06-29T21:42:15.013+0530" type="Warning"/>
+      </synLog>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>
